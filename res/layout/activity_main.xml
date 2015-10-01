@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context=".SimpleGravity" >
+
+    <unitec.lucas.game.GameLoop
+        android:id="@+id/gameLoop"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"/>
+
+   	<RelativeLayout
+        android:id="@+id/buttonGroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <Button
+            android:id="@+id/btnRestart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="#ff0000"
+            android:text="@string/restart"
+            android:layout_margin="5dp" />
+
+        <Button
+            android:id="@+id/btnLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:onClick="performAction"
+            android:text="@string/left" />
+
+        <Button
+            android:id="@+id/btnUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="performAction"
+            android:text="@string/up" />
+
+        <Button
+            android:id="@+id/btnRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="30dp"
+            android:onClick="performAction"
+            android:text="@string/right" />
+
+        <TextView
+            android:id="@+id/fuelLable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/btnRestart"
+            android:layout_alignBottom="@+id/btnRestart"
+            android:layout_alignParentStart="true"
+            android:text="@string/fuel"
+            android:textColor="#ff0000"
+            android:textAppearance="?android:attr/textAppearanceMedium" 
+            android:layout_marginStart="5dp"/>
+
+        <ProgressBar
+            android:id="@+id/fuelProgressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/fuelLable"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/btnLeft" 
+            android:max="40"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
